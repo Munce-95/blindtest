@@ -1,9 +1,9 @@
 {
-  "name": "blindtest-nicou-jeu",
+  "name": "Blindtest Anniversaire",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Munce-95.github.io/blindtest-nicou-jeu/",
+  "homepage": "https://Munce-95.github.io/blindtest/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
