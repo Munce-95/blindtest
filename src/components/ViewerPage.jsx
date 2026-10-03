@@ -103,11 +103,11 @@ export default function BuzzerOnly() {
     <div className="flex flex-col h-[100dvh] w-full bg-black overflow-hidden select-none items-center justify-center p-4">
       <audio ref={audioRef} src={activeMusic ? `${STORAGE_URL}${encodeURIComponent(activeMusic.filename)}` : ""} />
 
-      {/* Buzzer taille max écran */}
+      {/* Buzzer géant avec texte surdimensionné */}
       <button 
         disabled={status !== "active" || !activeMusic}
         onClick={handleBuzzAction}
-        className={`w-[85vw] max-w-[380px] h-[85vw] max-h-[380px] md:w-[450px] md:h-[450px] md:max-w-none md:max-h-none aspect-square shrink-0 rounded-full border-[8px] md:border-[12px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-4 text-center select-none touch-manipulation text-5xl sm:text-6xl md:text-8xl text-black ${getBuzzerStyle()}`}
+        className={`w-[85vw] max-w-[380px] h-[85vw] max-h-[380px] md:w-[480px] md:h-[480px] md:max-w-none md:max-h-none aspect-square shrink-0 rounded-full border-[8px] md:border-[12px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-2 text-center select-none touch-manipulation text-6xl sm:text-7xl md:text-9xl tracking-tight text-black ${getBuzzerStyle()}`}
       >
         {status === "active" && (!activeMusic ? "..." : "BUZZ")}
         {status === "me" && "OK!"}
