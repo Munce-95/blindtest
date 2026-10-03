@@ -106,7 +106,7 @@ export default function BuzzerOnly() {
       <button 
         disabled={status !== "active" || !activeMusic}
         onClick={handleBuzzAction}
-        className={`w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 aspect-square shrink-0 rounded-full border-[6px] md:border-[10px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-4 text-center select-none touch-manipulation text-4xl sm:text-5xl md:text-6xl text-black ${getBuzzerStyle()}`}
+        className={`w-250 h-250 sm:w-72 sm:h-72 md:w-80 md:h-80 aspect-square shrink-0 rounded-full border-[6px] md:border-[10px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-4 text-center select-none touch-manipulation text-4xl sm:text-5xl md:text-6xl text-black ${getBuzzerStyle()}`}
       >
         {status === "active" && (!activeMusic ? "..." : "BUZZ")}
         {status === "me" && "OK!"}
