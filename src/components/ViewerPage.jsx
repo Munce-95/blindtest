@@ -87,13 +87,13 @@ export default function BuzzerOnly() {
       case "active": 
         return !activeMusic 
           ? "bg-[#22c55e]/20 border-white/10 cursor-not-allowed opacity-50" 
-          : "bg-[#22c55e] shadow-[0_10px_0_0_#15803d] md:shadow-[0_14px_0_0_#15803d] hover:bg-[#4ade80] active:shadow-none active:translate-y-2 cursor-pointer";
+          : "bg-[#22c55e] shadow-[0_12px_0_0_#15803d] md:shadow-[0_20px_0_0_#15803d] hover:bg-[#4ade80] active:shadow-none active:translate-y-3 cursor-pointer";
       case "waiting": 
-        return "bg-[#dc2626] shadow-[0_10px_0_0_#991b1b] md:shadow-[0_14px_0_0_#991b1b] cursor-not-allowed opacity-90";
+        return "bg-[#dc2626] shadow-[0_12px_0_0_#991b1b] md:shadow-[0_20px_0_0_#991b1b] cursor-not-allowed opacity-90";
       case "taken": 
-        return "bg-[#6b7280] shadow-[0_10px_0_0_#374151] md:shadow-[0_14px_0_0_#374151] cursor-not-allowed opacity-80";
+        return "bg-[#6b7280] shadow-[0_12px_0_0_#374151] md:shadow-[0_20px_0_0_#374151] cursor-not-allowed opacity-80";
       case "me": 
-        return "bg-[#f97316] shadow-[0_10px_0_0_#c2410c] md:shadow-[0_14px_0_0_#c2410c] animate-pulse";
+        return "bg-[#f97316] shadow-[0_12px_0_0_#c2410c] md:shadow-[0_20px_0_0_#c2410c] animate-pulse";
       default: 
         return "bg-[#9ca3af]";
     }
@@ -103,10 +103,11 @@ export default function BuzzerOnly() {
     <div className="flex flex-col h-[100dvh] w-full bg-black overflow-hidden select-none items-center justify-center p-4">
       <audio ref={audioRef} src={activeMusic ? `${STORAGE_URL}${encodeURIComponent(activeMusic.filename)}` : ""} />
 
+      {/* Buzzer taille max écran */}
       <button 
         disabled={status !== "active" || !activeMusic}
         onClick={handleBuzzAction}
-        className={`w-250 h-250 sm:w-72 sm:h-72 md:w-80 md:h-80 aspect-square shrink-0 rounded-full border-[6px] md:border-[10px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-4 text-center select-none touch-manipulation text-4xl sm:text-5xl md:text-6xl text-black ${getBuzzerStyle()}`}
+        className={`w-[85vw] max-w-[380px] h-[85vw] max-h-[380px] md:w-[450px] md:h-[450px] md:max-w-none md:max-h-none aspect-square shrink-0 rounded-full border-[8px] md:border-[12px] border-black flex items-center justify-center font-[1000] italic transition-all uppercase leading-none p-4 text-center select-none touch-manipulation text-5xl sm:text-6xl md:text-8xl text-black ${getBuzzerStyle()}`}
       >
         {status === "active" && (!activeMusic ? "..." : "BUZZ")}
         {status === "me" && "OK!"}
